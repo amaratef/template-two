@@ -254,7 +254,7 @@ body{
 }
 /* End sub-header-three */
 
-/* Start main */
+/* === Main Content (Old Code Preserved) === */
 .main{
     display:grid;
     margin-top: 13%;
@@ -320,244 +320,147 @@ body{
         top: 0;
     }
 }
-/* Iv-2 */
 
- .allu-2 .container{
-    display: flex;
-    position: relative;
-    top: 100px;
-    justify-content: space-between;
+/* === Titles & Buttons (.allu-2 Fixed Margins) === */
+.allu-2 {
+    margin-top: 80px;    /* مسافة من فوق */
+    margin-bottom: 40px; /* مسافة من تحت */
 }
-.allu-2 .container button{
-    width: 80px;
+
+.allu-2 .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.allu-2 .container button {
+    width: 90px;
     height: 40px;
     border-radius: 22px;
     color: white;
     background-color: var(--main-color);
-}
-.allu-2 .container button:hover{
-    background-color: var(--secundry-color);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
     cursor: pointer;
 }
-/* Small */
+
+.allu-2 .container button:hover {
+    background-color: var(--secundry-color);
+}
+
 @media (max-width: 768px) {
-    .allu-2 .container {
-            display: flex;
-            position: relative;
-            top: 40px;
-            justify-content: space-between;
-        }
-.allu-2 .container button {
-        width: 80px;
-        height: 40px;
-        border-radius: 22px;
-        color: white;
-        background-color: var(--main-color);
+    .allu-2 {
+        margin-top: 40px;
+        margin-bottom: 30px;
     }
 }
-/* Medium */
-@media (max-width: 992px) {
-    .allu-2 .container {
-        position: relative;
-        top: 40px;
-        }
-}
-/* Main Part Cards */
 
-.cards .container{
-    position: relative;
-    top: 150px;
+@media (max-width: 992px) {
+    .allu-2 {
+        margin-top: 60px;
+    }
+}
+
+/* === Cards Section (Grid Fixed) === */
+.cards {
+    margin-bottom: 50px;
 }
 
 .cards .container .cards-main {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-gap: 8px;
-}
-.cards .container .cards-main .card{
-    background-color: white;
-    width: 90%;
-    border-radius: 13px;
-    box-shadow: 7px 5px 14px 5px #888383e8;
-}
-.cards .container .cards-main div img{
-    max-width: 70%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    right: 13%;
-    top: 3px;
-}
-.cards .container .cards-main .card h2{
-    padding: 16px;
-    font-size: 18px;
-}
-.cards .container .cards-main .card p{
-    padding: 20px;
-    color: rgba(169, 55, 55, 0.829);
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
 }
 
-.cards .container .cards-main .card button{
-    position: relative;
-    right: 28%;
-    top: 0%;
-    transform: translateY(-50%) translateX(30px);
-    transition: all .5s cubic-bezier(.68, -.55, .265, 1.55);
-    width: 61%;
-    height: 12%;
-    border-color: transparent;
-    border-radius: 5px;
+.cards .container .cards-main .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cards .container .cards-main .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.cards .container .cards-main .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.cards .container .cards-main .card h2 {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.5;
     margin-bottom: 10px;
-} 
-.cards .container .cards-main .card button:hover{
-    background-color: var(--secundry-color);
-    transform: translateY(-50%) translateX(30px);
-    transition: all .5s cubic-bezier(.68, -.55, .265, 1.55);
+    height: 45px;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.cards .container .cards-main .card p {
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.bt-3 {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bt-3:hover {
+    background-color: var(--main-color);
     color: white;
 }
-@media(max-width: 1199px){
-    .cards .container .cards-main
-{
-    grid-template-columns: repeat(3, 33.33%);
-}
-}
-@media (max-width: 1024px){
-.cards .container .cards-main{
 
-grid-template-columns: repeat(2, 50%);
-}
-}
-/* Start Footer One */
+/* === Footer === */
 .footer-one {
-    position: relative;
-    top: 169px;
-    width: 100%;
-    height: auto;
-    background-color: white;
-}
-.footer-one .container h2{
+    background: white;
+    padding: 40px 0;
+    margin-top: 40px;
     text-align: center;
-    position: relative;
-    top: 40px;
-    opacity: 0.8;
-}
-.footer-one .container .foot-1{
-    display: grid;
-    grid-template-columns: repeat(3, calc(100% / 3));
-    height: 200px;
-    justify-items: center;
-    align-items: center;
-}
-.footer-one .container .foot-1 span{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.footer-one .container .foot-1 span i {
-    background-color: var(--icon-color);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-}
-.footer-one .container .foot-1 span .fa-wallet:before
-,.footer-one .container .foot-1 span .fa-credit-card-alt:before,
-.fa-credit-card:before
-,.footer-one .container .foot-1 span fa-shipping-fast:before,
-.fa-truck-fast:before{
-       content: "\f555";
-       position: relative;
-       top: 32%;
-       right: 29%;
-       font-size: 27px;
-       color: white;
-}
-.footer-one .container .foot-1 .span-one ::after{
-    content: "";
-    background-color: #eee;
-    display: block;
-    height: 47%;
-    left: 0;
-    position: absolute;
-    top: 54%;
-    right: 36%;
-    transform: translateY(-49%);
-    width: 2px;
-}
-.footer-one .container .foot-1 .span-two::after{
-    content: "";
-    background-color: #eee;
-    display: block;
-    height: 47%;
-    position: absolute;
-    top: 31%;
-    left: 36%;
-    transform: translateX(-49%);
-    width: 2px;
-}
-@media(max-width: 992px) {
-.footer-one {
-    position: relative;
-    top: 227px;
-    width: 100%;
-    height: auto;
-    background-color: white;
-}
-    .footer-one .container .foot-1 {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    height: 100%;
-    justify-items: center;
-    align-items: center;
-    }
-.footer-one .container .foot-1 span {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-.footer-one .container h2 {
-    text-align: start;
-    position: relative;
-    top: 0px;
-    right: 20%;
-    padding: 10px;
-}
-.footer-one .container .foot-1 span i{
-    padding: 5px;
-}
-.footer-one .container .foot-1 .span-two::after{
-    display: none;
-}
-.footer-one .container .foot-1 .span-one ::after{
-right: 50%;
-}
-.footer-one .container .foot-1 .span-two{
-    position: relative;
-    left: 24px;
-    top: 34px;
-}
-}
-@media (max-width: 768px) {
-.footer-one .container .foot-1 {
-    grid-template-columns: repeat(1, 100%);
-}
-.footer-one .container .foot-1 .span-one ::after{
-    display: none;
-}
-.footer-one .container .foot-1 .span-two {
-position: relative;
-left: 0;
-top: 0;
-}
-.footer-one .container h2 {
-text-align: center;
-position: relative;
-top: 0;
-right: 0;
-}
 }
 
+.footer-one h2 {
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+
+.foot-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.foot-1 span i {
+    font-size: 30px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+    display: block;
+}
 
 /* Start Footer */
 .footer{
@@ -656,7 +559,253 @@ right: 0;
     }
 }
 /* End Footer */
+/* =========================================
+ /* =========================================
+   Professional Splash Screen (Snake Border)
+   ========================================= */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000a1f; /* لون أغمق من الموقع عشان الإضاءة تبان */
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden; /* مهم عشان الإضاءة متعملش سكرول */
+    transition: opacity 1s ease-out;
+}
+
+/* === تأثير الإضاءة المتحركة (Snake Border) === */
+.splash-screen span {
+    position: absolute;
+    display: block;
+}
+
+/* الخط العلوي */
+.splash-screen span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+/* الخط الأيمن */
+.splash-screen span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+/* الخط السفلي */
+.splash-screen span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+/* الخط الأيسر */
+.splash-screen span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+/* === تنسيق النصوص والأنيميشن === */
+/* =========================================
+   Cinematic Splash Screen (التتابع السينمائي)
+   ========================================= */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000a1f;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 1s ease-out;
+}
+
+/* === Snake Border Animation === */
+.splash-screen span {
+    position: absolute;
+    display: block;
+}
+.splash-screen span:nth-child(1) {
+    top: 0; left: -100%; width: 100%; height: 4px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+.splash-screen span:nth-child(2) {
+    top: -100%; right: 0; width: 4px; height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite; animation-delay: 0.25s;
+}
+.splash-screen span:nth-child(3) {
+    bottom: 0; right: -100%; width: 100%; height: 4px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite; animation-delay: 0.5s;
+}
+.splash-screen span:nth-child(4) {
+    bottom: -100%; left: 0; width: 4px; height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite; animation-delay: 0.75s;
+}
+
+/* === تنسيق المحتوى === */
+/* =========================================
+   Cinematic Splash Screen (11 Seconds)
+   ========================================= */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000a1f;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 1s ease-out;
+}
+
+/* Snake Border Animation */
+.splash-screen span { position: absolute; display: block; }
+.splash-screen span:nth-child(1) {
+    top: 0; left: -100%; width: 100%; height: 4px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+.splash-screen span:nth-child(2) {
+    top: -100%; right: 0; width: 4px; height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite; animation-delay: 0.25s;
+}
+.splash-screen span:nth-child(3) {
+    bottom: 0; right: -100%; width: 100%; height: 4px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite; animation-delay: 0.5s;
+}
+.splash-screen span:nth-child(4) {
+    bottom: -100%; left: 0; width: 4px; height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite; animation-delay: 0.75s;
+}
+
+/* Content Styling */
+.splash-content {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Team Name Style */
+.main-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #03e9f4;
+    text-shadow: 0 0 10px #03e9f4, 0 0 40px #03e9f4;
+    position: absolute;
+    opacity: 0;
+    /* يظهر لمدة 2.5 ثانية */
+    animation: showHideTitle 2.5s ease-in-out forwards;
+}
+
+/* Members Style */
+.members-list {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.members-list p {
+    font-family: 'Cairo', sans-serif;
+    font-size: 40px; /* كبرت الخط شوية عشان يكون أوضح */
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    position: absolute;
+    opacity: 0;
+    white-space: nowrap;
+    transform: scale(0.5);
+}
+
+/* === توزيع التوقيتات (Timings) === */
+/* كل اسم بيظهر لمدة 2 ثانية (مدة الأنيميشن) */
+
+/* 1. عمار عاطف (يبدأ بعد اختفاء التيتل مباشرة) */
+.member-1 {
+    animation: showHideMember 2s ease-in-out forwards;
+    animation-delay: 2.5s;
+}
+
+/* 2. جاد (يبدأ بعد عمار) */
+.member-2 {
+    animation: showHideMember 2s ease-in-out forwards;
+    animation-delay: 4.5s;
+}
+
+/* 3. أبو المجد (يبدأ بعد جاد) */
+.member-3 {
+    animation: showHideMember 2s ease-in-out forwards;
+    animation-delay: 6.5s;
+}
+
+/* 4. إبراهيم ناصر (يبدأ بعد أبو المجد) */
+.member-4 {
+    animation: showHideMember 2s ease-in-out forwards;
+    animation-delay: 8.5s;
+}
+
+/* === Keyframes === */
+@keyframes showHideTitle {
+    0% { opacity: 0; transform: scale(0.5); filter: blur(10px); }
+    20% { opacity: 1; transform: scale(1); filter: blur(0); }
+    80% { opacity: 1; transform: scale(1); filter: blur(0); }
+    100% { opacity: 0; transform: scale(1.5); filter: blur(20px); }
+}
+
+@keyframes showHideMember {
+    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+    20% { opacity: 1; transform: scale(1) translateY(0); }
+    80% { opacity: 1; transform: scale(1) translateY(0); }
+    100% { opacity: 0; transform: scale(1.2) translateY(-20px); }
+}
+
+/* Snake Anim Keys */
+@keyframes btn-anim1 { 0% { left: -100%; } 50%,100% { left: 100%; } }
+@keyframes btn-anim2 { 0% { top: -100%; } 50%,100% { top: 100%; } }
+@keyframes btn-anim3 { 0% { right: -100%; } 50%,100% { right: 100%; } }
+@keyframes btn-anim4 { 0% { bottom: -100%; } 50%,100% { bottom: 100%; } }
+
 /* Desgin By Eng Ammar Atef 01126514885 */
-
-
-
